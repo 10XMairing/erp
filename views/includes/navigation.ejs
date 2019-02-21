@@ -1,0 +1,47 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <button id="side-menu-toggle">Menu</button>
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a href="/">Home</a>
+            </li>
+            <li class="main-header__item">
+                <a href="/header1">header1</a>
+            </li>
+            <% if(authenticate) { %>
+            <li class="main-header__item">
+                <a href="/header2">header2</a>
+            </li>
+            <li class="main-header__item">
+                <a href="/header3">header3</a>
+            </li>
+            <li class="main-header__item">
+                <a href="/header4">header4
+                </a>
+            </li>
+            <li class="main-header__item">
+                <a href="/header5">header5
+                </a>
+            </li>
+            <% } %>
+        </ul>
+            <ul class="main-header__item-list">
+                <% if (!authenticate) { %>
+                    <li class="main-header__item">
+                        <a  href="/login">Login</a>
+                    </li>
+                    <li class="main-header__item">
+                        <a  href="/register">Register</a>
+                    </li>
+                <% } else { %>
+                    <li class="main-header__item">
+                        <form action="/logout" method="post">
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+        
+    </nav>
+</header>
